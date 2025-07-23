@@ -1,0 +1,71 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breach Alert System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>securitypass-DGC</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="password.html" class="nav-link">Password Strength Checker</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="glass-card breach-checker">
+      <label for="email-input" class="sr-only">Enter your email address</label>
+      <div class="email-input-wrapper">
+        <input
+          type="email"
+          id="email-input"
+          placeholder="Enter your email"
+          aria-describedby="breach-status last-checked"
+          autocomplete="email"
+          aria-live="polite"
+        />
+        <button id="check-breach-btn" class="btn btn-primary" aria-label="Check breaches for email">
+          <!-- Shield icon SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L3 7v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V7l-9-5z"></path>
+            <path d="M12 12v4"></path>
+            <circle cx="12" cy="17" r="1"></circle>
+          </svg>
+          Check
+        </button>
+      </div>
+
+      <div class="radar-visualization" aria-label="3D radar visualization" role="img" tabindex="0">
+        <!-- Placeholder for animated radar sweep -->
+        <svg width="150" height="150" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" stroke="var(--color-red)" stroke-width="2" fill="none" />
+          <line x1="32" y1="32" x2="62" y2="32" stroke="var(--color-red)" stroke-width="2" />
+          <!-- Additional radar sweep animation will be handled in JS -->
+        </svg>
+      </div>
+
+      <div id="breach-status" class="breach-status-card glass-card" aria-live="polite" aria-atomic="true">
+        <h3>Breach Status</h3>
+        <p id="breach-message">No breach checked yet.</p>
+      </div>
+
+      <div id="breach-results" class="breach-results" aria-live="polite" aria-atomic="true">
+        <!-- Animated icons and breach results will be displayed here -->
+      </div>
+
+      <p id="last-checked" class="last-checked" aria-live="polite">Last checked: Never</p>
+
+      <button id="export-pdf-btn" class="btn btn-secondary" aria-label="Export breach results as PDF" disabled>
+        Export Results as PDF
+      </button>
+    </section>
+  </main>
+  <!-- Footer removed as per user request -->
+  <script src="breach.js" defer></script>
+</body>
+</html>

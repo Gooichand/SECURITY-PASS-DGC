@@ -1,0 +1,20 @@
+{
+  "breaches": [
+    {
+      "email": "test@example.com",
+      "breachCount": 3,
+      "highRisk": true,
+      "details": [
+        { "name": "ExampleBreach1", "date": "2021-05-10" },
+        { "name": "ExampleBreach2", "date": "2022-01-15" },
+        { "name": "ExampleBreach3", "date": "2023-03-20" }
+      ]
+    },
+    {
+      "email": "user@domain.com",
+      "breachCount": 0,
+      "highRisk": false,
+      "details": []
+    }
+  ]
+}
